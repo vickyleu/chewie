@@ -33,7 +33,7 @@ dependencies:
 
 ```dart
 import 'package:chewie/chewie.dart';
-final videoPlayerController = VideoPlayerController.network(
+final videoPlayerController = CachedVideoPlayerController.network(
     'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
 
 await videoPlayerController.initialize();
@@ -181,7 +181,7 @@ Please run the app in the [`example/`](https://github.com/brianegan/chewie/tree/
 
 ## Migrating from Chewie < 0.9.0
 
-Instead of passing the `VideoPlayerController` and your options to the `Chewie` widget you now pass them to the `ChewieController` and pass that later to the `Chewie` widget.
+Instead of passing the `CachedVideoPlayerController` and your options to the `Chewie` widget you now pass them to the `ChewieController` and pass that later to the `Chewie` widget.
 
 ```dart
 final playerWidget = Chewie(

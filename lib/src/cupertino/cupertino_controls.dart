@@ -15,7 +15,7 @@ import 'package:chewie/src/notifiers/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:video_player/video_player.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 
 class CupertinoControls extends StatefulWidget {
   const CupertinoControls({
@@ -38,7 +38,7 @@ class CupertinoControls extends StatefulWidget {
 class _CupertinoControlsState extends State<CupertinoControls>
     with SingleTickerProviderStateMixin {
   late PlayerNotifier notifier;
-  late VideoPlayerValue _latestValue;
+  late CachedVideoPlayerValue _latestValue;
   double? _latestVolume;
   Timer? _hideTimer;
   final marginSize = 5.0;
@@ -50,7 +50,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   Timer? _bufferingDisplayTimer;
   bool _displayBufferingIndicator = false;
   double selectedSpeed = 1.0;
-  late VideoPlayerController controller;
+  late CachedVideoPlayerController controller;
 
   // We know that _chewieController is set in didChangeDependencies
   ChewieController get chewieController => _chewieController!;
@@ -372,7 +372,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildMuteButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color backgroundColor,
     Color iconColor,
     double barHeight,
@@ -418,7 +418,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildPlayPause(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color iconColor,
     double barHeight,
   ) {
@@ -539,7 +539,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildSpeedButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color iconColor,
     double barHeight,
   ) {
